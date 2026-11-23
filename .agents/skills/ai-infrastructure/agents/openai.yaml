@@ -1,0 +1,4 @@
+interface:
+  display_name: "AI Infrastructure"
+  short_description: "Organize durable agent context under .agents"
+  default_prompt: "Use $ai-infrastructure to organize this project's AI-specific configuration and durable context."

@@ -1,0 +1,15 @@
+/* Comfortaa with its weight axis extended to 1000, copied from
+   capturecontext-frontend (apps/web/public/apps/arx/fonts, OFL licensed). */
+@font-face {
+  font-family: 'Arx Wordmark';
+  src: url('/fonts/ArxWordmark-VariableFont_wght.woff2') format('woff2');
+  font-weight: 300 1000;
+  font-style: normal;
+  font-display: swap;
+}
+
+.arx-wordmark {
+  font-family: 'Arx Wordmark', var(--font-sans);
+  font-weight: 900;
+  letter-spacing: 0;
+}

@@ -1,0 +1,25 @@
+{
+  "name": "@capturecontext/arx-manual",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "nuxt dev --host 0.0.0.0 --port 3100",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview --port 3100",
+    "typecheck": "nuxt typecheck",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "@nuxt/content": "^3.15.2",
+    "@nuxt/icon": "^2.5.0",
+    "nuxt": "^4.5.2",
+    "nuxt-raycast-icons": "workspace:*",
+    "typescript": "^6.0.3",
+    "vue": "^3.5.41",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@types/node": "^26.2.0",
+    "vue-tsc": "^3.3.10"
+  }
+}

@@ -1,0 +1,6 @@
+packages:
+  - apps/manual
+  - packages/*
+allowBuilds:
+  '@parcel/watcher': true
+  esbuild: true

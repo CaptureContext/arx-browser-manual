@@ -1,0 +1,31 @@
+name: Checks
+# Type-checks the manual and builds the static site, as the Dockerfile does. Railway's production
+# service waits for this before it deploys a push to main (.railway/railway.ts).
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: checks-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  manual:
+    name: manual
+    runs-on: ubuntu-latest
+    # The Dockerfile's Node, so the site builds here as it does for a deploy.
+    container: node:26
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Install pnpm
+        # The version in package.json's packageManager and the Dockerfile.
+        run: npm install --global pnpm@12.0.0-rc.8
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+      - name: Typecheck
+        run: pnpm typecheck
+      - name: Build the site
+        run: pnpm generate

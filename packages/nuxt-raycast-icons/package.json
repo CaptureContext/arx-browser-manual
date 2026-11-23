@@ -1,0 +1,40 @@
+{
+  "name": "nuxt-raycast-icons",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "./dist/module.mjs",
+  "exports": {
+    ".": {
+      "types": "./dist/module.d.mts",
+      "import": "./dist/module.mjs"
+    },
+    "./icon-names.json": "./icon-names.json",
+    "./icons/*": "./icons/*.svg"
+  },
+  "files": [
+    "dist",
+    "icons",
+    "icon-names.json"
+  ],
+  "scripts": {
+    "build": "nuxt-module-build build",
+    "prepare": "pnpm build",
+    "prepack": "pnpm build",
+    "sync:icons": "node ./scripts/sync-icons.mjs",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@nuxt/icon": "^2.5.0",
+    "@nuxt/kit": "^4.5.2"
+  },
+  "peerDependencies": {
+    "nuxt": ">=4.0.0"
+  },
+  "devDependencies": {
+    "@nuxt/module-builder": "^1.0.3",
+    "@types/node": "^26.2.0",
+    "nuxt": "^4.5.2",
+    "typescript": "^6.0.3"
+  }
+}
